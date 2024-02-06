@@ -1,0 +1,1 @@
+// this's the place of very global types
