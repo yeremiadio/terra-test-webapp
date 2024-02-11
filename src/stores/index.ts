@@ -1,6 +1,9 @@
 import { combineReducers, configureStore, Middleware, isRejected } from "@reduxjs/toolkit";
+import { userApi } from "./userStore/userStoreApi";
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  [userApi.reducerPath]: userApi.reducer,
+})
 
 // this function is for handling globally if rtk query response error
 export const rtkQueryErrorLogger: Middleware =
@@ -19,7 +22,8 @@ export const setupStore = (preloadedState?: Partial<RootState>) => {
       // adding the api middleware enables caching, invalidation, polling and other features of `rtk-query`
       getDefaultMiddleware().concat(
         [
-          rtkQueryErrorLogger
+          rtkQueryErrorLogger,
+          userApi.middleware
         ]
       ),
     preloadedState,

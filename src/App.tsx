@@ -9,7 +9,7 @@ import { ROUTES } from '@/utils/configs/routes';
 
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <>
       <BrowserRouter>
@@ -25,6 +25,6 @@ function App() {
       </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;
