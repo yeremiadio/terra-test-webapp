@@ -1,31 +1,54 @@
-# React + TypeScript + Vite
+# React FE Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Start & Run Project
+- Clone the project from git repository using SSH clone.
 
-Currently, two official plugins are available:
+In the project directory, you can run:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `npm intall` : Depedencies install.
+- `npm run dev` : Runs the app in the development mode.
+- `npm run build`: Builds the app for production to the `build` folder
 
-## Expanding the ESLint configuration
+## Component/File Creation Rules
+- Every files that created must be wrapped with folder then the file should be named `index.ts/index.tsx`
+  example:
+- `pages/Homepage/index.tsx`
+- `pages/Homepage/_components/UserTable/index.tsx`
+- `utils/functions/stringToObject/index.ts`
+- etc
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## File & Folder Naming
+Only 2 types of naming using PascalCase and camelCase
 
-- Configure the top-level `parserOptions` property like this:
+#### Using PascalCase
+When writing component pages/reusable, please using PascalCase
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+example:
+- `pages/Homepage/index.tsx`
+- `pages/Homepage/_components/UserTable/index.tsx`
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# React_FE_Template
+#### Using camelCase
+
+If not component, you can use camelCase like:
+- file scss name
+- Function & Variable name
+- file image name
+
+## Style Rules
+This project  is using: 
+- Tailwind (Utility CSS)
+- Using Global Variable (Color, size etc)
+- Mobile first approach
+
+## Project Technologies
+[<img align="left" alt="Typescript" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Eslint" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="React" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Redux" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" style="padding-right:10px;" />](),`tailwind`, `Schadcn UI`, `vite`, `prettier`, `RTK Query`.
+
+## How to Write Function
+- Use dynamic import every component page
+- Use arrow function style
+- Use callback for memoization function reference
+- Use camelCase
+
+## Commit Rules
+The commit rules uses conventional commit / semantic commit
+
