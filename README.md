@@ -1,5 +1,8 @@
 # React FE Template
 
+## Please Upgrade the library as latest version first before init the project
+This template was latest updated at Monday, 12th February 2024
+
 ## Start & Run Project
 - Clone the project from git repository using SSH clone.
 
