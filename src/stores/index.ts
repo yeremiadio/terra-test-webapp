@@ -1,5 +1,6 @@
 import { combineReducers, configureStore, Middleware, isRejected } from "@reduxjs/toolkit";
-import { userApi } from "./userStore/userStoreApi";
+
+import { userApi } from "@/stores/userStore/userStoreApi";
 
 const rootReducer = combineReducers({
   [userApi.reducerPath]: userApi.reducer,
