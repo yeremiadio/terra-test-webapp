@@ -46,11 +46,13 @@ This project  is using:
 ## Project Technologies
 [<img align="left" alt="Typescript" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Eslint" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="React" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Redux" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" style="padding-right:10px;" />](),`tailwind`, `Schadcn UI`, `vite`, `prettier`, `RTK Query`.
 
-## How to Write Function
+## You should know and use this
 - Use dynamic import every component page
 - Use arrow function style
-- Use callback for memoization function reference
-- Use camelCase
+- Use callback/use memo for memoization function reference
+- Use camelCase for function naming
+- Use absolute import
+- Grouping import
 
 ## Commit Rules
 The commit rules uses conventional commit / semantic commit
