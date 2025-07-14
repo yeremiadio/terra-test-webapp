@@ -11,7 +11,6 @@ const saveCookie = (
   value: string | number,
   options?: Cookies.CookieAttributes,
 ) => {
-  asdas;
   const stringValue = value.toString();
   Cookies.set(key, stringValue, options ?? { sameSite: 'strict' });
 };
