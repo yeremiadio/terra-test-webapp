@@ -2,9 +2,7 @@ export type Nullable<D> = D | null | undefined;
 
 export type TKnownRoleUserEnum = string;
 
-export type TResetPasswordResponse = {
-  temp_password: string;
-};
+export type TResetPasswordResponse = { temp_password: string };
 
 export type TResetPasswordRequest = {
   usernameoremail: string;
@@ -23,11 +21,11 @@ export type TResetPasswordRequest = {
  * ```
  */
 export type TKnownUsertype =
-  | "systemadmin"
-  | "superadmin"
-  | "admin"
-  | "officer"
-  | "operator";
+  | 'systemadmin'
+  | 'superadmin'
+  | 'admin'
+  | 'officer'
+  | 'operator';
 
 export interface IUserCredentialData {
   id: number;

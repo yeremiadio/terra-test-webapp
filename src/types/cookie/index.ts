@@ -1,5 +1,5 @@
 //Please give prefix I for Interface, the T for Type
-import { IUserCredentialData } from "@/types/api/user";
+import { IUserCredentialData } from '@/types/api/user';
 
 export type TStoredCookieValue = {
   id: number;
@@ -13,7 +13,8 @@ export type TStoredCookieValue = {
 };
 
 export type TStoredCookieName =
-  keyof Pick<IUserCredentialData, 'id' | 'username' | 'email' | "iat" | 'exp'> | "role"
-  | "token"
-  | "reset_pass"
-  | "unit_name";
+  | keyof Pick<IUserCredentialData, 'id' | 'username' | 'email' | 'iat' | 'exp'>
+  | 'role'
+  | 'token'
+  | 'reset_pass'
+  | 'unit_name';

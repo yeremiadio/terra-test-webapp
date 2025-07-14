@@ -6,6 +6,6 @@ const stringToObject = (inputString: string) => {
   } catch (error) {
     return null;
   }
-}
+};
 
-export { stringToObject }
+export { stringToObject };
