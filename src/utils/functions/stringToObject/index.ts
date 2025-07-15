@@ -4,7 +4,7 @@ const stringToObject = (inputString: string) => {
     const resultObject = JSON.parse(inputString);
     return resultObject;
   } catch (error) {
-    return null;
+    return error;
   }
 };
 
