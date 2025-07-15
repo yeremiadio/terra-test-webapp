@@ -1,9 +1,11 @@
 # React FE Template
 
 ## Please Upgrade the library as latest version first before init the project
-This template was latest updated at Monday, 12th February 2024
+
+This template was latest updated at Tuesday, 15th February 2025
 
 ## Start & Run Project
+
 - Clone the project from git repository using SSH clone.
 
 In the project directory, you can run:
@@ -13,6 +15,7 @@ In the project directory, you can run:
 - `npm run build`: Builds the app for production to the `build` folder
 
 ## Component/File Creation Rules
+
 - Every files that created must be wrapped with folder then the file should be named `index.ts/index.tsx`
   example:
 - `pages/Homepage/index.tsx`
@@ -21,32 +24,40 @@ In the project directory, you can run:
 - etc
 
 ## File & Folder Naming
+
 Only 2 types of naming using PascalCase and camelCase
 
 #### Using PascalCase
+
 When writing component pages/reusable, please using PascalCase
 
 example:
+
 - `pages/Homepage/index.tsx`
 - `pages/Homepage/_components/UserTable/index.tsx`
 
 #### Using camelCase
 
 If not component, you can use camelCase like:
+
 - file scss name
 - Function & Variable name
 - file image name
 
 ## Style Rules
-This project  is using: 
+
+This project is using:
+
 - Tailwind (Utility CSS)
 - Using Global Variable (Color, size etc)
 - Mobile first approach
 
 ## Project Technologies
+
 [<img align="left" alt="Typescript" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Eslint" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="React" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Redux" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" style="padding-right:10px;" />](),`tailwind`, `Schadcn UI`, `vite`, `prettier`, `RTK Query`.
 
 ## You should know and use this
+
 - Use dynamic import every component page
 - Use arrow function style
 - Use callback/use memo for memoization function reference
@@ -55,5 +66,5 @@ This project  is using:
 - Grouping import
 
 ## Commit Rules
-The commit rules uses conventional commit / semantic commit
 
+The commit rules uses conventional commit / semantic commit
