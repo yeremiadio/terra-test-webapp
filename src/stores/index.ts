@@ -6,8 +6,12 @@ import {
 } from '@reduxjs/toolkit';
 
 import { userApi } from '@/stores/userStore/userStoreApi';
+import { gpsApi } from '@/stores/gpsStore/gpsStoreApi';
 
-const rootReducer = combineReducers({ [userApi.reducerPath]: userApi.reducer });
+const rootReducer = combineReducers({
+  [userApi.reducerPath]: userApi.reducer,
+  [gpsApi.reducerPath]: gpsApi.reducer,
+});
 
 // this function is for handling globally if rtk query response error
 export const rtkQueryErrorLogger: Middleware = () => (next) => (action) => {
@@ -23,7 +27,11 @@ export const setupStore = (preloadedState?: Partial<RootState>) => {
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
       // adding the api middleware enables caching, invalidation, polling and other features of `rtk-query`
-      getDefaultMiddleware().concat([rtkQueryErrorLogger, userApi.middleware]),
+      getDefaultMiddleware().concat([
+        rtkQueryErrorLogger,
+        userApi.middleware,
+        gpsApi.middleware,
+      ]),
     preloadedState,
   });
 };

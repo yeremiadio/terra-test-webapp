@@ -1,6 +1,5 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
-import GreetingPage from '@/pages/Greeting';
 import ErrorPage from '@/pages/Error';
 
 import MainLayout from '@/components/Layout/MainLayout';
@@ -8,6 +7,7 @@ import MainLayout from '@/components/Layout/MainLayout';
 import { ROUTES } from '@/utils/configs/routes';
 
 import './App.css';
+import DashboardPage from './pages/Dashboard';
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
           <Route element={<MainLayout />}>
             <Route
               path={ROUTES.base}
-              element={<GreetingPage />}
+              element={<DashboardPage />}
               errorElement={<ErrorPage />}
             />
           </Route>

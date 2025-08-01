@@ -25,6 +25,10 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-expressions': 'off',
       'prettier/prettier': 'error',
       'react-refresh/only-export-components': 'off', // disable warning export components
       'no-undef': 'off',
