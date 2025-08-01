@@ -7,7 +7,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { LayoutDashboard, Settings } from 'lucide-react';
+import { LayoutDashboard } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
 const items = [
@@ -16,11 +16,11 @@ const items = [
     url: '/',
     icon: LayoutDashboard,
   },
-  {
-    title: 'Settings',
-    url: '/settings',
-    icon: Settings,
-  },
+  // {
+  //   title: 'Settings',
+  //   url: '/settings',
+  //   icon: Settings,
+  // },
 ];
 
 export function Sidebar() {
