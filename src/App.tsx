@@ -9,6 +9,7 @@ import { ROUTES } from '@/utils/configs/routes';
 import './App.css';
 import DashboardPage from './pages/Dashboard';
 import FleetDetailPage from './pages/FleetDetail';
+import FleetPage from './pages/Fleet';
 
 const App = () => {
   return (
@@ -22,6 +23,11 @@ const App = () => {
               errorElement={<ErrorPage />}
             />
             <Route path={ROUTES.fleet}>
+              <Route
+                path={ROUTES.fleet}
+                element={<FleetPage />}
+                errorElement={<ErrorPage />}
+              />
               <Route
                 path={ROUTES.fleetById(':id')}
                 element={<FleetDetailPage />}

@@ -20,7 +20,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 // Extend dayjs with relativeTime plugin
 dayjs.extend(relativeTime);
 dayjs.locale('en');
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import PlotAreaChart from './PlotAreaChart';
 import { terraColors } from '@/utils/constants/colors';
 import { ChartData, ScriptableContext } from 'chart.js';
@@ -32,6 +32,9 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import IoDataTrendChart from './IoDataTrendChart';
+import { Button } from '@/components/ui/button';
+import { ROUTES } from '@/utils/configs/routes';
+import { MdArrowBack } from 'react-icons/md';
 
 const addAlphatoHexColor = (color: string, opacity?: number): string => {
   const validOpacity = opacity !== undefined ? opacity : 1;
@@ -41,6 +44,7 @@ const addAlphatoHexColor = (color: string, opacity?: number): string => {
 };
 
 const FleetDetailPage = () => {
+  const navigate = useNavigate();
   const [selectedTrend, setSelectedTrend] = useState<string>('16');
   const { id: fleetId } = useParams<'id'>();
   const { data: detailTrends, isLoading } = useGetGpsTrendsByImeiQuery(
@@ -149,6 +153,13 @@ const FleetDetailPage = () => {
   }, [detailTrends, selectedTrend]);
   return (
     <div className="p-2 lg:p-4 my-4">
+      <Button
+        variant={'outline'}
+        onClick={() => navigate(ROUTES.fleet)}
+        className="mb-3"
+      >
+        <MdArrowBack size={20} className="text-gray-800" /> Back
+      </Button>
       <div className="flex flex-wrap flex-row gap-4">
         <div className="bg-white p-4 rounded-md h-max flex-1 lg:flex-[0.45]">
           <div className="flex flex-row items-center justify-between mt-2">
