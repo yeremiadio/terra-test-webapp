@@ -1,3 +1,4 @@
+import { terraIcon } from '@/assets';
 import {
   Sidebar as ShadcnSidebar,
   SidebarContent,
@@ -7,20 +8,42 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { LayoutDashboard } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { ROUTES } from '@/utils/configs/routes';
+import { FaTruckMoving } from 'react-icons/fa';
+import {
+  MdFirstPage,
+  MdPropaneTank,
+  MdSyncLock,
+  MdDashboard,
+} from 'react-icons/md';
+import { Link, useLocation } from 'react-router-dom';
 
 const items = [
   {
     title: 'Dashboard',
     url: '/',
-    icon: LayoutDashboard,
+    icon: MdDashboard,
   },
-  // {
-  //   title: 'Settings',
-  //   url: '/settings',
-  //   icon: Settings,
-  // },
+  {
+    title: 'Fleets',
+    url: ROUTES.fleet,
+    icon: FaTruckMoving,
+  },
+  {
+    title: 'Fuel History',
+    url: ROUTES.fuelHistory,
+    icon: MdPropaneTank,
+  },
+  {
+    title: 'Reminders',
+    url: ROUTES.reminders,
+    icon: MdSyncLock,
+  },
+  {
+    title: 'Reports',
+    url: ROUTES.reports,
+    icon: MdFirstPage,
+  },
 ];
 
 export function Sidebar() {
@@ -32,16 +55,24 @@ export function Sidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+              <div className="flex gap-2 items-center justify-center py-6">
+                <img src={terraIcon} alt="Terra Fleet" className="w-10 h-10" />
+                <h3 className="font-bold text-lg">TeraFleet</h3>
+              </div>
+              {items.map(({ title, icon: Icon, url }) => (
+                <SidebarMenuItem key={title} className="my-[2px]">
                   <SidebarMenuButton
+                    size={'lg'}
                     asChild
-                    isActive={currentPath === item.url}
+                    isActive={
+                      currentPath === url ||
+                      (currentPath.startsWith(url + '/') && url !== '/')
+                    }
                   >
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
+                    <Link to={url} className="flex items-center gap-4">
+                      <Icon size={20} />
+                      <span className="text-[16px]">{title}</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

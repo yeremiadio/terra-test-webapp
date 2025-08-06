@@ -55,18 +55,17 @@ export const PointMarker: FC<Props & Partial<OverlayViewProps>> = ({
       position={position}
       mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
     >
-      {(isWarning || isOverThreshold) && (
-        <div
-          className={cn(
-            `animate-ping`,
-            'absolute h-3 w-3 rounded-full',
-            useBigMarker && 'h-5 w-5',
-            useBigMarkerOnShowDetail && showDetail && 'h-5 w-5',
-            isWarning && 'bg-yellow-600',
-            isOverThreshold && 'bg-red-600',
-          )}
-        />
-      )}
+      <div
+        className={cn(
+          `animate-ping bg-green-500`,
+          'absolute h-3 w-3 rounded-full',
+          useBigMarker && 'h-5 w-5',
+          useBigMarkerOnShowDetail && showDetail && 'h-5 w-5',
+          isWarning && 'bg-yellow-600',
+          isOverThreshold && 'bg-red-600',
+          !isActive && 'bg-gray-400',
+        )}
+      />
       <div
         className={cn(
           'relative flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-green-600 transition-all ease-in-out',

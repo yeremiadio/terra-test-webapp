@@ -24,5 +24,42 @@ export interface IGpsDashboardMetrics {
   averageBatteryVoltage: { value: number; unit: string };
   gsmSignalDistribution: Record<string, number>;
   gnssFix: { good: number; bad: number };
+  totalOdometerByImei: {
+    imei: string;
+    avgOdometer: number;
+  }[];
+  baseMetrics: MetricsSummary;
   totalRecordsProcessed: number;
+}
+
+export interface IGpsCoordinates {
+  lat: number;
+  lng: number;
+  location: string;
+  timestamp: Date;
+}
+
+export interface IGnssStatus {
+  [key: string]: number;
+}
+
+export interface IGpsCoordinateParams {
+  imei: string;
+  startDate?: Date;
+  endDate?: Date;
+}
+
+export interface MovementStats {
+  totalMovingTime: number;
+  totalStoppedTime: number;
+  totalIdlingTime: number;
+}
+
+export interface MetricsSummary {
+  totalDistance: number; // km
+  totalDuration: number; // seconds
+  averageSpeed: number; // km/h
+  maxSpeed: number; // km/h
+  minSpeed: number; // km/h
+  movementStats: MovementStats;
 }

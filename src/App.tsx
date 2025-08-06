@@ -8,18 +8,26 @@ import { ROUTES } from '@/utils/configs/routes';
 
 import './App.css';
 import DashboardPage from './pages/Dashboard';
+import FleetDetailPage from './pages/FleetDetail';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<MainLayout />}>
+          <Route path={ROUTES.base} element={<MainLayout />}>
             <Route
               path={ROUTES.base}
               element={<DashboardPage />}
               errorElement={<ErrorPage />}
             />
+            <Route path={ROUTES.fleet}>
+              <Route
+                path={ROUTES.fleetById(':id')}
+                element={<FleetDetailPage />}
+                errorElement={<ErrorPage />}
+              />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

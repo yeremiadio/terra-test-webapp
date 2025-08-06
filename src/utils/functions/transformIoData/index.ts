@@ -1,8 +1,9 @@
 import { IIodata } from '@/types/api/gps';
 
-const keyMap: Record<string, string> = {
+export const keyMap: Record<string, string> = {
   '16': 'totalOdometer',
   '21': 'gsmSignal',
+  '24': 'speed',
   '30': 'numberOfDtc',
   '31': 'engineLoad',
   '32': 'coolantTemperature',
@@ -38,6 +39,7 @@ const keyMap: Record<string, string> = {
 const unitMap: Record<string, string> = {
   '16': 'm',
   '21': '', // Signal strength usually unitless
+  '24': 'km/h', // Speed
   '30': '', // Counts don't have units
   '31': '%', // Engine load in percentage
   '32': '°C',
